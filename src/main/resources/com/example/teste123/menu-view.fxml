@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.teste123.HelloController">
+   <right>
+      <AnchorPane prefHeight="332.0" prefWidth="290.0" style="-fx-background-color: FFFFFF;" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="41.0" layoutY="65.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="197.0" text="Agendar Consulta" />
+            <Button layoutX="41.0" layoutY="103.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="197.0" text="Ver Consultas" />
+            <Button layoutX="41.0" layoutY="182.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="197.0" text="Alterar Dados" />
+            <Button layoutX="41.0" layoutY="141.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="197.0" text="Cancelar Consulta" />
+            <Button fx:id="BotaoMenuVoltar" layoutX="42.0" layoutY="223.0" mnemonicParsing="false" onAction="#SairBotaomenuOnAction" prefHeight="25.0" prefWidth="194.0" text="Sair" />
+         </children>
+      </AnchorPane>
+   </right>
+   <left>
+      <AnchorPane prefHeight="332.0" prefWidth="328.0" style="-fx-background-color: FFFFFF;" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" layoutX="21.0" layoutY="149.0" prefHeight="17.0" prefWidth="71.0" text="ENDEREÇO:" />
+            <Label alignment="CENTER" layoutX="21.0" layoutY="124.0" prefHeight="17.0" prefWidth="71.0" text="CPF:" />
+            <Label alignment="CENTER" layoutX="21.0" layoutY="174.0" prefHeight="17.0" prefWidth="71.0" text="TELEFONE:" />
+            <Label alignment="CENTER" layoutX="21.0" layoutY="200.0" prefHeight="17.0" prefWidth="71.0" text="EMAIL:" />
+            <Label alignment="CENTER" layoutX="21.0" layoutY="100.0" prefHeight="17.0" prefWidth="71.0" text="NOME:" />
+            <Label alignment="CENTER" layoutX="21.0" layoutY="77.0" prefHeight="17.0" prefWidth="71.0" text="USUÁRIO:" />
+         </children>
+      </AnchorPane>
+   </left>
+   <top>
+      <AnchorPane prefHeight="54.0" prefWidth="600.0" style="-fx-background-color: FFFFFF;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="68.0" fitWidth="70.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../../OneDrive/Pictures/uece.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="43.0" layoutY="8.0" prefHeight="52.0" prefWidth="514.0" text="SISTEMA DE CONSULTAS MÉDICAS">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </top>
+</BorderPane>
