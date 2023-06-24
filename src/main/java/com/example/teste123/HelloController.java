@@ -7,7 +7,7 @@ import javafx.scene.image.Image;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
-import java.io.File;
+import java.io.*;
 
 import java.util.ResourceBundle;
 import java.net.URL;
@@ -37,9 +37,6 @@ public class HelloController implements Initializable {
     public void BotaoEntrarLoginOnAction(ActionEvent event){
         HelloApplication.mudarTela(1);
     }
-
-    @FXML
-    public void BotaoConfirmarLoginUsuario(ActionEvent event){HelloApplication.mudarTela(2);}
 
     @FXML
     public void BotaoEntrarMenuOnAction(ActionEvent event) { HelloApplication.mudarTela((2)); }
