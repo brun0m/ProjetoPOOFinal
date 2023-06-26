@@ -3,24 +3,14 @@ package com.example.teste123;
 public class Usuario {
     protected String nome;
     protected String usuario;
-    protected int CPF;
     protected String plano;
     protected String senha;
 
-    public Usuario(String nome, String usuario, int CPF, String plano, String senha){
+    public Usuario(String nome, String usuario, String plano, String senha){
         this.nome = nome;
         this.usuario = usuario;
-        this.CPF = CPF;
         this.plano = plano;
         this.senha = senha;
-    }
-
-    public int getCPF() {
-        return CPF;
-    }
-
-    public void setCPF(int CPF) {
-        this.CPF = CPF;
     }
 
     public String getNome() {

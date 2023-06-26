@@ -27,12 +27,6 @@ public class HelloController implements Initializable {
         stage.close();
     }
 
-
-    @FXML
-    public void BotaoEntrarInicioOnAction(ActionEvent event){
-        HelloApplication.mudarTela(0);
-    }
-
     @FXML
     public void BotaoEntrarLoginOnAction(ActionEvent event){
         HelloApplication.mudarTela(1);
@@ -42,14 +36,7 @@ public class HelloController implements Initializable {
     public void BotaoEntrarMenuOnAction(ActionEvent event) { HelloApplication.mudarTela((2)); }
 
     @FXML
-    public void BotaoConfirmarCadastroUsuarioOnAction(ActionEvent event){
-        HelloApplication.mudarTela(1);
-    }
-
-    @FXML
-    public void BotaoCadastrarUsuarioOnAction(ActionEvent event){
-        HelloApplication.mudarTela(3);
-    }
+    public void BotaoEntrarCadUsuarioOnAction(ActionEvent event){HelloApplication.mudarTela(3);}
 
     @FXML
     public void BotaoEntrarAgendamentoOnAction(ActionEvent event) { HelloApplication.mudarTela(4);}

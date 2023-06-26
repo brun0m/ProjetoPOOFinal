@@ -17,7 +17,7 @@
             <Button layoutX="41.0" layoutY="103.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="197.0" text="Ver Consultas" />
             <Button layoutX="41.0" layoutY="182.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="197.0" text="Alterar Dados" />
             <Button layoutX="41.0" layoutY="141.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="197.0" text="Cancelar Consulta" />
-            <Button fx:id="BotaoMenuVoltar" layoutX="42.0" layoutY="223.0" mnemonicParsing="false" onAction="#BotaoEntrarInicioOnAction" prefHeight="25.0" prefWidth="194.0" text="Sair" />
+            <Button fx:id="BotaoMenuVoltar" layoutX="42.0" layoutY="223.0" mnemonicParsing="false" onAction="#BotaoEntrarLoginOnAction" prefHeight="25.0" prefWidth="194.0" text="Sair" />
             <Line endX="11.0" endY="4.0" layoutX="-11.0" layoutY="4.0" startX="11.0" startY="282.0" />
          </children>
       </AnchorPane>
