@@ -38,8 +38,6 @@ public class HelloController implements Initializable {
     @FXML
     public void BotaoEntrarCadUsuarioOnAction(ActionEvent event){HelloApplication.mudarTela(3);}
 
-    @FXML
-    public void BotaoEntrarAgendamentoOnAction(ActionEvent event) { HelloApplication.mudarTela(4);}
 
     @FXML
     public void BotaoConfirmarCadastroMedicoOnAction(ActionEvent event) { HelloApplication.mudarTela(1);}

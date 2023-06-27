@@ -36,7 +36,6 @@ public class cadastroUsuarioController implements Initializable {
     private TextField usuario;
 
 
-
     @FXML
     public void BotaoEntrarInicioOnAction(ActionEvent event){
         HelloApplication.mudarTela(0);

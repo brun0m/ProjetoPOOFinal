@@ -6,11 +6,8 @@ public class Usuario {
     protected String plano;
     protected String senha;
 
-    public Usuario(String nome, String usuario, String plano, String senha){
-        this.nome = nome;
+    public Usuario(String usuario){
         this.usuario = usuario;
-        this.plano = plano;
-        this.senha = senha;
     }
 
     public String getNome() {

@@ -3,30 +3,27 @@ package com.example.teste123;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
-import javafx.scene.control.Button;
-import javafx.scene.image.ImageView;
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import javafx.scene.Parent;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import javafx.scene.Scene;
-
+import java.io.*;
 import java.sql.Connection;
+import java.util.ArrayList;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class LoginController {
 
+    //LOGIN CONTROLLER
     @FXML
     private TextField NomeDoUsuario;
     @FXML
     private TextField Senha;
     @FXML
     private Label Aviso;
-
     @FXML
     public void BotaoLoginOnAction(ActionEvent event){
         if(NomeDoUsuario.getText().isBlank() == false && Senha.getText().isBlank() == false){
@@ -36,10 +33,8 @@ public class LoginController {
             Aviso.setText("Entre com nome de Usuário e Senha");
         }
     }
-
     @FXML
     public void BotaoCancelarOnAction(ActionEvent event){HelloApplication.mudarTela(0);}
-
     public void validarLogin(){
         DataBaseConexao conectarAgora = new DataBaseConexao();
         Connection connectDB = conectarAgora.getConnection();
@@ -50,7 +45,9 @@ public class LoginController {
 
             while(queryResult.next()){
                 if(queryResult.getInt(1) == 1){
-                    HelloApplication.mudarTela(2);
+                    Usuario user = new Usuario(NomeDoUsuario.getText());
+                    HelloApplication.Loginsusuario.add(user);
+                    entrarMenu();
                 } else {
                     Aviso.setText("Login inválido! Tente novamente");
                 }
@@ -59,10 +56,20 @@ public class LoginController {
             e.printStackTrace();
             e.getCause();
         }
-
     }
 
-
-
+    public void entrarMenu(){
+        try{
+            Parent root = FXMLLoader.load(getClass().getResource("menu-view.fxml"));
+            Stage MenuStage = new Stage();
+            MenuStage.initStyle(StageStyle.UNDECORATED);
+            MenuStage.setTitle("Menu");
+            MenuStage.setScene(new Scene(root, 640,360));
+            MenuStage.show();
+        }catch(Exception e){
+            e.printStackTrace();
+            e.getCause();
+        }
+    }
 
 }

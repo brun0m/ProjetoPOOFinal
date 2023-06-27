@@ -6,10 +6,11 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class HelloApplication extends Application {
 
-    private static Stage stage;
+    public static Stage stage;
     private static Scene InicioScene;
     private static Scene LoginScene;
     private static Scene MenuScene;
@@ -28,8 +29,8 @@ public class HelloApplication extends Application {
         FXMLLoader fxmlLogin = new FXMLLoader(HelloApplication.class.getResource("login-view.fxml"));
         LoginScene = new Scene(fxmlLogin.load(), 640, 360);
 
-        FXMLLoader fxmlMenu = new FXMLLoader(HelloApplication.class.getResource("menu-view.fxml"));
-        MenuScene = new Scene(fxmlMenu.load(), 640,360);
+        Usuario user = new Usuario("?????");
+        HelloApplication.Loginsusuario.add(user);
 
         FXMLLoader fxmlAgendar = new FXMLLoader(HelloApplication.class.getResource("agendarconsulta-view.fxml"));
         AgendarConsultaScene = new Scene(fxmlAgendar.load(), 800, 600);
@@ -58,10 +59,6 @@ public class HelloApplication extends Application {
                 stage.setTitle("Login");
                 stage.setScene(LoginScene);
                 break;
-            case 2:
-                stage.setTitle("Menu");
-                stage.setScene(MenuScene);
-                break;
             case 3:
                 stage.setTitle("Cadastro Usuário");
                 stage.setScene(CadUsuarioScene);
@@ -80,6 +77,8 @@ public class HelloApplication extends Application {
                 break;
         }
     }
+
+    public static ArrayList<Usuario> Loginsusuario = new ArrayList<>();
 
     public static void main(String[] args) {
         launch();
