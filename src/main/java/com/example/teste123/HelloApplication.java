@@ -13,9 +13,7 @@ public class HelloApplication extends Application {
     public static Stage stage;
     private static Scene InicioScene;
     private static Scene LoginScene;
-    private static Scene MenuScene;
     private static Scene CadUsuarioScene;
-    private static Scene AgendarConsultaScene;
     private static Scene ClinicoGeralScene;
     private static Scene CadMedicoScene;
 
@@ -31,9 +29,6 @@ public class HelloApplication extends Application {
 
         Usuario user = new Usuario("?????");
         HelloApplication.Loginsusuario.add(user);
-
-        FXMLLoader fxmlAgendar = new FXMLLoader(HelloApplication.class.getResource("agendarconsulta-view.fxml"));
-        AgendarConsultaScene = new Scene(fxmlAgendar.load(), 800, 600);
 
         FXMLLoader fxmlCadastroUsuario = new FXMLLoader(HelloApplication.class.getResource("cadastrousuario-view.fxml"));
         CadUsuarioScene = new Scene(fxmlCadastroUsuario.load(),600,400);
@@ -62,10 +57,6 @@ public class HelloApplication extends Application {
             case 3:
                 stage.setTitle("Cadastro Usuário");
                 stage.setScene(CadUsuarioScene);
-                break;
-            case 4:
-                stage.setTitle("Agendar Consulta");
-                stage.setScene(AgendarConsultaScene);
                 break;
             case 5:
                 stage.setTitle("Clínico Geral");

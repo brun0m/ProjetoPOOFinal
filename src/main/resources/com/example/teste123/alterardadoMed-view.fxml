@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.teste123.alterarDadosMedController.">
+   <top>
+      <AnchorPane prefHeight="78.0" prefWidth="600.0" style="-fx-background-color: #000000;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="98.0" layoutY="26.0" prefHeight="17.0" prefWidth="208.0" text="ALTERAR DADOS" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </top>
+   <left>
+      <AnchorPane prefHeight="322.0" prefWidth="307.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="34.0" layoutY="28.0" prefHeight="17.0" prefWidth="129.0" text="Nome Completo">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+            <TextField layoutX="34.0" layoutY="45.0" prefHeight="25.0" prefWidth="229.0" />
+            <Label layoutX="34.0" layoutY="70.0" prefHeight="17.0" prefWidth="129.0" text="Usuário">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="34.0" layoutY="87.0" prefHeight="25.0" prefWidth="229.0" style="-fx-background-color: FFFFFF;" />
+            <Label layoutX="34.0" layoutY="112.0" prefHeight="17.0" prefWidth="129.0" text="Senha">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+            <TextField layoutX="34.0" layoutY="129.0" prefHeight="25.0" prefWidth="229.0" />
+            <Label layoutX="34.0" layoutY="161.0" prefHeight="17.0" prefWidth="129.0" text="Confirmar Senha">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+            <TextField layoutX="34.0" layoutY="179.0" prefHeight="25.0" prefWidth="229.0" />
+            <Button layoutX="34.0" layoutY="264.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="229.0" text="Confirmar" />
+         </children>
+      </AnchorPane>
+   </left>
+   <center>
+      <AnchorPane prefHeight="322.0" prefWidth="321.0" BorderPane.alignment="CENTER">
+         <children>
+            <Line layoutY="14.0" startY="291.0" />
+            <Button layoutX="32.0" layoutY="264.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="229.0" text="Voltar" />
+            <Label layoutX="43.0" layoutY="29.0" prefHeight="17.0" prefWidth="129.0" text="Planos Atendidos">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+            <RadioButton layoutX="43.0" layoutY="59.0" mnemonicParsing="false" text="CAMED" />
+            <RadioButton layoutX="43.0" layoutY="90.0" mnemonicParsing="false" text="BRADESCO" />
+            <RadioButton layoutX="43.0" layoutY="121.0" mnemonicParsing="false" text="AMIL" />
+            <RadioButton layoutX="43.0" layoutY="151.0" mnemonicParsing="false" text="UNIMED" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

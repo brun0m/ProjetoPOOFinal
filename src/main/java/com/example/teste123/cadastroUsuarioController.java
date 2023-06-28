@@ -74,8 +74,6 @@ public class cadastroUsuarioController implements Initializable {
             e.printStackTrace();
             e.getCause();
         }
-
-
     }
     @FXML
     public void SelecionarPlano(ActionEvent event){

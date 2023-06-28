@@ -13,9 +13,9 @@
    <right>
       <AnchorPane prefHeight="332.0" prefWidth="290.0" style="-fx-background-color: FFFFFF;" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="41.0" layoutY="65.0" mnemonicParsing="false" onAction="#BotaoEntrarAgendamentoOnAction" prefHeight="18.0" prefWidth="197.0" text="Agendar Consulta" />
+            <Button fx:id="BotaoEntrarAgendamento" layoutX="41.0" layoutY="65.0" mnemonicParsing="false" onAction="#BotaoEntrarAgendamentoOnAction" prefHeight="18.0" prefWidth="197.0" text="Agendar Consulta" />
             <Button layoutX="41.0" layoutY="103.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="197.0" text="Ver Consultas" />
-            <Button layoutX="41.0" layoutY="182.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="197.0" text="Alterar Dados" />
+            <Button fx:id="BotaoEntrarAlterar" layoutX="41.0" layoutY="182.0" mnemonicParsing="false" onAction="#BotaoEntrarAlterarDadosOnAction" prefHeight="18.0" prefWidth="197.0" text="Alterar Dados" />
             <Button layoutX="41.0" layoutY="141.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="197.0" text="Cancelar Consulta" />
             <Button fx:id="BotaoSairConta" layoutX="42.0" layoutY="223.0" mnemonicParsing="false" onAction="#BotaoSairContaOnAction" prefHeight="25.0" prefWidth="194.0" text="Sair" />
             <Line endX="11.0" endY="4.0" layoutX="-11.0" layoutY="4.0" startX="11.0" startY="282.0" />
@@ -36,6 +36,7 @@
             <Label fx:id="UsuarioMenu" layoutX="98.0" layoutY="77.0" prefHeight="17.0" prefWidth="147.0" />
             <Label fx:id="NomeMenu" layoutX="98.0" layoutY="100.0" prefHeight="17.0" prefWidth="147.0" />
             <Label fx:id="PlanoMenu" layoutX="98.0" layoutY="124.0" prefHeight="17.0" prefWidth="147.0" />
+            <Label layoutX="116.0" layoutY="27.0" text="Login como Paciente" textFill="#00f6ff" />
          </children>
       </AnchorPane>
    </left>

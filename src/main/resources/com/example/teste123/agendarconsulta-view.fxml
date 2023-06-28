@@ -16,7 +16,7 @@
                   <Font size="24.0" />
                </font>
             </Text>
-            <Button layoutX="61.0" layoutY="35.0" mnemonicParsing="false" onAction="#BotaoEntrarMenuOnAction" prefHeight="25.0" prefWidth="118.0" text="Voltar" />
+            <Button fx:id="VoltarMenu" layoutX="61.0" layoutY="35.0" mnemonicParsing="false" onAction="#BotaoEntrarMenuOnAction" prefHeight="25.0" prefWidth="118.0" text="Voltar" />
          </children>
       </AnchorPane>
    </top>
@@ -111,6 +111,9 @@
                </font>
             </Text>
             <Button layoutX="630.0" layoutY="368.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="101.0" text="Agendar" />
+            <Label layoutX="667.0" layoutY="6.0" />
+            <Label fx:id="UsuarioAgendamento" alignment="CENTER" layoutX="645.0" layoutY="15.0" prefHeight="17.0" prefWidth="108.0" />
+            <Text layoutX="576.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuário:" textAlignment="RIGHT" wrappingWidth="65.236328125" />
          </children>
       </AnchorPane>
    </center>
