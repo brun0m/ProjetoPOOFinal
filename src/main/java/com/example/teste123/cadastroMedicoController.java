@@ -56,7 +56,6 @@ public class cadastroMedicoController implements Initializable {
         else{
             AvisoSenha.setText("Senhas não estão iguais!");
         }
-
     }
 
     public void registrarMedico(){
@@ -73,9 +72,9 @@ public class cadastroMedicoController implements Initializable {
         String esp = EspecialidadeEscolhida.getText();
 
         String insertFields = "INSERT INTO new_medico(Nome, Usuario, Senha, Avaliacao, NumDeAvaliacao, BRADESCO, " +
-                "CAMED, AMIL, UNIMED, Especialidade) VALUES (";
+                "CAMED, AMIL, UNIMED, Especialidade, UltimasAvaliacao) VALUES (";
         String insertValues = "'" + Nome + "','"  + Usuario + "','" + Senha + "','" + 0 + "','" + 0 + "','" + bradesco +
-                "','" + camed + "','" + amil + "','" + unimed + "','" + esp + "')";
+                "','" + camed + "','" + amil + "','" + unimed + "','" + esp + "','')";
         String InsertToRegister = insertFields + insertValues;
 
         try{

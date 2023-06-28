@@ -32,8 +32,28 @@ public class menuUsuariocontroller {
     private Button BotaoEntrarAgendamento;
     @FXML
     private Button BotaoEntrarAlterar;
+    @FXML
+    private Button EntrarPesquisa;
 
     public menuUsuariocontroller(){}
+
+    @FXML
+    public void BotaoEntrarPesquisaOnAction(ActionEvent event){
+        try {
+            Usuario user = new Usuario(UsuarioMenu.getText());
+            HelloApplication.Loginsusuario.add(user);
+            Stage stage = (Stage) EntrarPesquisa.getScene().getWindow();
+            stage.close();
+            Parent root = FXMLLoader.load(getClass().getResource("pesquisar-view.fxml"));
+            Stage AgendarStage = new Stage();
+            AgendarStage.initStyle(StageStyle.UNDECORATED);
+            AgendarStage.setScene(new Scene(root, 640, 480));
+            AgendarStage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
+    }
 
     @FXML
     public void BotaoEntrarAgendamentoOnAction(ActionEvent event) {

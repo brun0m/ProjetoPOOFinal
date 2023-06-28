@@ -82,7 +82,7 @@ public class alterarDadosUsuarioController{
         try{
             Statement statement = connectionDB.createStatement();
             statement.executeUpdate(alterarRegistros);
-            confirmarRegistro.setText("Usuário registrado com sucesso!");
+            confirmarRegistro.setText("Alteração feita com sucesso!");
         }catch(Exception e){
             e.printStackTrace();
             e.getCause();

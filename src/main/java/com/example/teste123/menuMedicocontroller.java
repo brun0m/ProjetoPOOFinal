@@ -2,9 +2,13 @@ package com.example.teste123;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -13,6 +17,8 @@ import java.sql.Statement;
 public class menuMedicocontroller {
     @FXML
     private Button BotaoSairConta;
+    @FXML
+    private Button BotaoAlteracao;
     @FXML
     private Label NomeMenu;
     @FXML
@@ -32,6 +38,25 @@ public class menuMedicocontroller {
     public void BotaoSairContaOnAction(ActionEvent event){
         Stage stage = (Stage) BotaoSairConta.getScene().getWindow();
         stage.close();
+        HelloApplication.mudarTela(1);
+    }
+
+    @FXML
+    public void BotaoEntrarAlterarDadosOnAction(ActionEvent event){
+        try {
+            Usuario user = new Usuario(UsuarioMenu.getText());
+            HelloApplication.Loginsusuario.add(user);
+            Stage stage = (Stage) BotaoAlteracao.getScene().getWindow();
+            stage.close();
+            Parent root = FXMLLoader.load(getClass().getResource("alterardadoMed-view.fxml"));
+            Stage AlterarStage = new Stage();
+            AlterarStage.initStyle(StageStyle.UNDECORATED);
+            AlterarStage.setScene(new Scene(root, 600, 400));
+            AlterarStage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
     }
 
     @FXML
