@@ -28,6 +28,7 @@ import java.util.*;
 public class ClinicaGeralController {
     private int cont;
     private String data;
+    private String nomeusu;
     private String medUsu;
     @FXML
     private Button Cancelar;
@@ -153,7 +154,7 @@ public class ClinicaGeralController {
             Statement statementDados2 = connectDB2.createStatement();
             ResultSet resultadoDados2 = statementDados2.executeQuery(mostrarUsu);
             while(resultadoDados2.next()) {
-                String nomeUsu = resultadoDados2.getString("Nome");
+                setNomeusu(resultadoDados2.getString("Nome"));
             }
             String verAgendamento = "SELECT Posicao from new_agendamento WHERE Especialidade='CLINICA GERAL' and " +
                     "UsuarioMedico='" + getMedUsu() + "' and Data='" + getData() + "'";
@@ -191,9 +192,10 @@ public class ClinicaGeralController {
         DataBaseConexao conectarAgora = new DataBaseConexao();
         Connection connectDB2 = conectarAgora.getConnection();
         String novoAgendamento = "INSERT INTO new_agendamento(UsuarioMedico, UsuarioPaciente, Preco, " +
-                "Especialidade, Data, Posicao, NomeMedico) VALUES (";
+                "Especialidade, Data, Posicao, NomeMedico, NomeUsuario, Estrelas, Encerrou, Avaliacao, Plano) VALUES (";
         String novoAgendamento2 = "'" + getMedUsu() + "','" + Usuario.getText() + "','" + 70 + "','CLINICA GERAL','"
-                + getData() + "','" + cont+1 + "','" + Medicoescolhido.getText() + "')";
+                + getData() + "','" + cont+1 + "','" + Medicoescolhido.getText() + "','" + getNomeusu() + "','" +
+                0 + "','false','','" + UsuarioPlano.getText() + "')";
         String addAgendamento = novoAgendamento + novoAgendamento2;
         try{
             Statement statement = connectDB2.createStatement();
@@ -218,5 +220,13 @@ public class ClinicaGeralController {
 
     public void setMedUsu(String medUsu) {
         this.medUsu = medUsu;
+    }
+
+    public String getNomeusu() {
+        return nomeusu;
+    }
+
+    public void setNomeusu(String nomeusu) {
+        this.nomeusu = nomeusu;
     }
 }
