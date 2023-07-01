@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.teste123.ConsultaMedicoController">
+   <children>
+      <TextArea fx:id="InstrucoesMed" layoutX="10.0" layoutY="14.0" prefHeight="216.0" prefWidth="581.0" promptText="Escreva suas instruções aqui..." />
+      <Label alignment="CENTER_RIGHT" layoutY="230.0" prefHeight="17.0" prefWidth="85.0" text="Assinatura:" />
+      <Label fx:id="Assinatura" layoutX="91.0" layoutY="230.0" prefHeight="17.0" prefWidth="143.0" />
+      <Button fx:id="ButtonEnviar" layoutX="324.0" layoutY="340.0" mnemonicParsing="false" onAction="#ButtonEnviarPacienteOnAction" prefHeight="40.0" prefWidth="166.0" text="Enviar" />
+      <Button fx:id="ButtonVoltar" layoutX="85.0" layoutY="340.0" mnemonicParsing="false" onAction="#ButtonVoltarAnteriorOnAction" prefHeight="40.0" prefWidth="166.0" text="Voltar" />
+      <Line endX="48.0" layoutX="186.0" layoutY="247.0" startX="-100.0" />
+      <Label fx:id="mensagemRegistrar" alignment="CENTER" layoutX="303.0" layoutY="316.0" prefHeight="24.0" prefWidth="209.0" />
+   </children>
+</AnchorPane>

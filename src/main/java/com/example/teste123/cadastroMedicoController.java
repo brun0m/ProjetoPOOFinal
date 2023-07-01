@@ -72,9 +72,9 @@ public class cadastroMedicoController implements Initializable {
         String esp = EspecialidadeEscolhida.getText();
 
         String insertFields = "INSERT INTO new_medico(Nome, Usuario, Senha, Avaliacao, NumDeAvaliacao, BRADESCO, " +
-                "CAMED, AMIL, UNIMED, Especialidade, UltimasAvaliacao) VALUES (";
+                "CAMED, AMIL, UNIMED, SEMPLANO, Especialidade, UltimasAvaliacao) VALUES (";
         String insertValues = "'" + Nome + "','"  + Usuario + "','" + Senha + "','" + 0 + "','" + 0 + "','" + bradesco +
-                "','" + camed + "','" + amil + "','" + unimed + "','" + esp + "','')";
+                "','" + camed + "','" + amil + "','" + unimed + "','true','" + esp + "','')";
         String InsertToRegister = insertFields + insertValues;
 
         try{

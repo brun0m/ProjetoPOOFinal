@@ -42,10 +42,10 @@
       <AnchorPane prefHeight="332.0" prefWidth="290.0" style="-fx-background-color: FFFFFF;" BorderPane.alignment="CENTER">
          <children>
             <Line layoutY="14.0" startY="264.0" />
-            <Button layoutX="47.0" layoutY="94.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="197.0" text="Ver Consultas" />
-            <Button layoutX="47.0" layoutY="134.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="197.0" text="Cancelar Consulta" />
+            <Button fx:id="ButtonEntrarConsultas" layoutX="47.0" layoutY="135.0" mnemonicParsing="false" onAction="#BotaoEntrarConsultasOnAction" prefHeight="18.0" prefWidth="197.0" text="Ver Consultas" />
             <Button fx:id="BotaoAlteracao" layoutX="47.0" layoutY="173.0" mnemonicParsing="false" onAction="#BotaoEntrarAlterarDadosOnAction" prefHeight="18.0" prefWidth="197.0" text="Alterar Dados" />
             <Button fx:id="BotaoSairConta" layoutX="47.0" layoutY="212.0" mnemonicParsing="false" onAction="#BotaoSairContaOnAction" prefHeight="18.0" prefWidth="197.0" text="Sair" />
+            <Button layoutX="47.0" layoutY="96.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="197.0" text="Histórico" />
          </children>
       </AnchorPane>
    </right>

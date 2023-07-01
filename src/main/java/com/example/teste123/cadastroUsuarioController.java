@@ -84,7 +84,7 @@ public class cadastroUsuarioController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ObservableList<String> ListaDePlanos = FXCollections.observableArrayList("CAMED", "BRADESCO", "UNIMED",
-                "AMIL","SEM PLANO");
+                "AMIL","SEMPLANO");
         CBPlanos.setItems(ListaDePlanos);
     }
 }

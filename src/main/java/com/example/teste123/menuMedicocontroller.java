@@ -31,6 +31,8 @@ public class menuMedicocontroller {
     private Label EspecialidadeMenu;
     @FXML
     private Label AtendimentosMenu;
+    @FXML
+    private Button ButtonEntrarConsultas;
 
     public menuMedicocontroller(){}
 
@@ -39,6 +41,24 @@ public class menuMedicocontroller {
         Stage stage = (Stage) BotaoSairConta.getScene().getWindow();
         stage.close();
         HelloApplication.mudarTela(1);
+    }
+
+    @FXML
+    public void BotaoEntrarConsultasOnAction(ActionEvent event) {
+        try {
+            Usuario user = new Usuario(UsuarioMenu.getText());
+            HelloApplication.Loginsusuario.add(user);
+            Stage stage = (Stage) ButtonEntrarConsultas.getScene().getWindow();
+            stage.close();
+            Parent root = FXMLLoader.load(getClass().getResource("verConsultaMedico-view.fxml"));
+            Stage AlterarStage = new Stage();
+            AlterarStage.initStyle(StageStyle.UNDECORATED);
+            AlterarStage.setScene(new Scene(root, 600, 400));
+            AlterarStage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
     }
 
     @FXML

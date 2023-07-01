@@ -14,7 +14,6 @@ public class HelloApplication extends Application {
     private static Scene InicioScene;
     private static Scene LoginScene;
     private static Scene CadUsuarioScene;
-    private static Scene ClinicoGeralScene;
     private static Scene CadMedicoScene;
 
     @Override
@@ -36,9 +35,6 @@ public class HelloApplication extends Application {
         FXMLLoader fxmlCadastroMedico = new FXMLLoader(HelloApplication.class.getResource("cadastromedico-view.fxml"));
         CadMedicoScene = new Scene(fxmlCadastroMedico.load(),600,400);
 
-        FXMLLoader fxmlClinicoGeral = new FXMLLoader(HelloApplication.class.getResource("clinicageral-view.fxml"));
-        ClinicoGeralScene = new Scene(fxmlClinicoGeral.load(),600,400);
-
         primaryStage.setTitle("Inicio");
         primaryStage.setScene(InicioScene);
         primaryStage.show();
@@ -57,10 +53,6 @@ public class HelloApplication extends Application {
             case 3:
                 stage.setTitle("Cadastro Usuário");
                 stage.setScene(CadUsuarioScene);
-                break;
-            case 5:
-                stage.setTitle("Clínico Geral");
-                stage.setScene(ClinicoGeralScene);
                 break;
             case 6:
                 stage.setTitle("Cadastro Médico");

@@ -21,7 +21,7 @@ import java.util.ResourceBundle;
 
 public class menuUsuariocontroller {
     @FXML
-    private Button BotaoSairConta;
+    private Button BotaoSairConta, BotaoVerConsulta;
     @FXML
     private Label NomeMenu;
     @FXML
@@ -92,6 +92,24 @@ public class menuUsuariocontroller {
     }
 
     @FXML
+    public void BotaoEntrarConsultaOnAction(ActionEvent event){
+        try {
+            Usuario user = new Usuario(UsuarioMenu.getText());
+            HelloApplication.Loginsusuario.add(user);
+            Stage stage = (Stage) BotaoVerConsulta.getScene().getWindow();
+            stage.close();
+            Parent root = FXMLLoader.load(getClass().getResource("VendoConsultas-view.fxml"));
+            Stage AlterarStage = new Stage();
+            AlterarStage.initStyle(StageStyle.UNDECORATED);
+            AlterarStage.setScene(new Scene(root, 800, 600));
+            AlterarStage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
+    }
+
+    @FXML
     public void BotaoSairContaOnAction(ActionEvent event){
         Stage stage = (Stage) BotaoSairConta.getScene().getWindow();
         stage.close();
@@ -119,5 +137,7 @@ public class menuUsuariocontroller {
             e.getCause();
         }
     }
+
+
 
 }

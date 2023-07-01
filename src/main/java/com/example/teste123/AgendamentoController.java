@@ -17,6 +17,8 @@ import java.sql.Statement;
 import java.util.ResourceBundle;
 public class AgendamentoController{
     @FXML
+    private Button ClinicaGeral;
+    @FXML
     private Button VoltarMenu;
     @FXML
     private Label UsuarioAgendamento;
@@ -39,7 +41,22 @@ public class AgendamentoController{
     }
 
     @FXML
-    public void BotaoEntrarClinicaGeralOnAction(ActionEvent event) { HelloApplication.mudarTela((5)); }
+    public void BotaoEntrarClinicaGeralOnAction(ActionEvent event) {
+        try {
+            Usuario user = new Usuario(UsuarioAgendamento.getText());
+            HelloApplication.Loginsusuario.add(user);
+            Stage stage = (Stage) ClinicaGeral.getScene().getWindow();
+            stage.close();
+            Parent root = FXMLLoader.load(getClass().getResource("clinicageral-view.fxml"));
+            Stage AgendarStage = new Stage();
+            AgendarStage.initStyle(StageStyle.UNDECORATED);
+            AgendarStage.setScene(new Scene(root, 640, 480));
+            AgendarStage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
+    }
 
     @FXML
     public void initialize() {

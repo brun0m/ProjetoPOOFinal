@@ -36,6 +36,7 @@ public class LoginController {
 
     @FXML
     public void BotaoCancelarOnAction(ActionEvent event) {
+        Aviso.setText("");
         HelloApplication.mudarTela(0);
     }
 
@@ -71,6 +72,7 @@ public class LoginController {
 
     public void entrarMenuUsuario() {
         try {
+            Aviso.setText("");
             Parent root = FXMLLoader.load(getClass().getResource("menu-view.fxml"));
             Stage MenuStage = new Stage();
             MenuStage.initStyle(StageStyle.UNDECORATED);
@@ -84,6 +86,7 @@ public class LoginController {
     }
     public void entrarMenuMedico(){
         try {
+            Aviso.setText("");
             Parent root = FXMLLoader.load(getClass().getResource("menumedico-view.fxml"));
             Stage MenuStage = new Stage();
             MenuStage.initStyle(StageStyle.UNDECORATED);
