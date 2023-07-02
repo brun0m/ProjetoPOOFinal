@@ -13,11 +13,17 @@ import javafx.stage.StageStyle;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class ConsultaMedicoController {
     public String nomemedico;
     public String usuariomedico;
+    public String usuariopaciente;
+    public String nomepaciente;
+    public int ID;
     @FXML
     private Button ButtonEnviar;
     @FXML
@@ -50,14 +56,14 @@ public class ConsultaMedicoController {
         DataBaseConexao conectarAgora2 = new DataBaseConexao();
         Connection connectDB2 = conectarAgora2.getConnection();
 
-        String Consultando = "INSERT INTO new_consulta(Estrelas, Usuario, UsuarioMed, Atendimento, NomeMed," +
-                "Preco, Encerrou) VALUES ('" + 0 + "','" + getUsuariomedico() + "','" + getNomemedico() + "','" +
-                InstrucoesMed.getText() + "','" + getNomemedico() + "','" + 0 + "','false')";
+        String Consultando = "UPDATE new_agendamento set Atendimento='" + InstrucoesMed.getText() + "' " +
+                "WHERE UsuarioMedico='" + getUsuariomedico() + "' and idnew_table='" + getID() + "'";
         try{
             Statement statement = connectDB2.createStatement();
             statement.executeUpdate(Consultando);
             mensagemRegistrar.setText("Instruções mandadas com sucesso!");
-        }catch(Exception e){
+        } catch(SQLException e){
+            Logger.getLogger(VerConsultaModelo.class.getName()).log(Level.SEVERE, null, e);
             e.printStackTrace();
             e.getCause();
         }
@@ -68,18 +74,22 @@ public class ConsultaMedicoController {
         DataBaseConexao conectarAgora2 = new DataBaseConexao();
         Connection connectDB2 = conectarAgora2.getConnection();
         mensagemRegistrar.setText("");
-        String mostrarDados = "SELECT Nome, Usuario from new_medico WHERE Usuario='" +
-                HelloApplication.Loginsusuario.get(HelloApplication.Loginsusuario.size()-1).getUsuario() + "'";
+        String pegarDados = "SELECT NomeMedico, UsuarioPaciente, UsuarioMedico, UsuarioMedico, idnew_table from new_agendamento WHERE idnew_table =" +
+                HelloApplication.ListaID.get(HelloApplication.ListaID.size()-1).getID();
 
         try{
             Statement statementDados = connectDB2.createStatement();
-            ResultSet resultadoDados = statementDados.executeQuery(mostrarDados);
+            ResultSet resultadoDados = statementDados.executeQuery(pegarDados);
             while(resultadoDados.next()) {
-                setNomemedico(resultadoDados.getString("Nome"));
-                setUsuariomedico(resultadoDados.getString("Usuario"));
+                setNomemedico(resultadoDados.getString("NomeMedico"));
+                setUsuariomedico(resultadoDados.getString("UsuarioMedico"));
+                setID(resultadoDados.getInt("idnew_table"));
+                setUsuariopaciente(resultadoDados.getString("UsuarioPaciente"));
             }
             Assinatura.setText(getNomemedico());
-        }catch(Exception e){
+
+        }catch(SQLException e){
+            Logger.getLogger(VerConsultaModelo.class.getName()).log(Level.SEVERE, null, e);
             e.printStackTrace();
             e.getCause();
         }
@@ -99,5 +109,29 @@ public class ConsultaMedicoController {
 
     public void setUsuariomedico(String usuariomedico) {
         this.usuariomedico = usuariomedico;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+    public String getUsuariopaciente() {
+        return usuariopaciente;
+    }
+
+    public void setUsuariopaciente(String usuariopaciente) {
+        this.usuariopaciente = usuariopaciente;
+    }
+
+    public String getNomepaciente() {
+        return nomepaciente;
+    }
+
+    public void setNomepaciente(String nomepaciente) {
+        this.nomepaciente = nomepaciente;
     }
 }

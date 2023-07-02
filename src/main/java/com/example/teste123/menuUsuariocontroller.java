@@ -21,6 +21,8 @@ import java.util.ResourceBundle;
 
 public class menuUsuariocontroller {
     @FXML
+    private Button BotaoEntrarHistorico;
+    @FXML
     private Button BotaoSairConta, BotaoVerConsulta;
     @FXML
     private Label NomeMenu;
@@ -37,6 +39,23 @@ public class menuUsuariocontroller {
 
     public menuUsuariocontroller(){}
 
+    @FXML
+    public void BotaoEntrarHistoricoOnAction(ActionEvent event){
+        try {
+            Usuario user = new Usuario(UsuarioMenu.getText());
+            HelloApplication.Loginsusuario.add(user);
+            Stage stage = (Stage) BotaoEntrarHistorico.getScene().getWindow();
+            stage.close();
+            Parent root = FXMLLoader.load(getClass().getResource("historico-view.fxml"));
+            Stage AgendarStage = new Stage();
+            AgendarStage.initStyle(StageStyle.UNDECORATED);
+            AgendarStage.setScene(new Scene(root, 800, 400));
+            AgendarStage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
+    }
     @FXML
     public void BotaoEntrarPesquisaOnAction(ActionEvent event){
         try {
@@ -115,6 +134,7 @@ public class menuUsuariocontroller {
         stage.close();
         HelloApplication.mudarTela(1);
     }
+
 
     @FXML
     public void initialize(){

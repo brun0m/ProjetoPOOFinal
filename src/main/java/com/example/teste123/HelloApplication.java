@@ -28,6 +28,7 @@ public class HelloApplication extends Application {
 
         Usuario user = new Usuario("?????");
         HelloApplication.Loginsusuario.add(user);
+        HelloApplication.Armazen.add(user);
 
         FXMLLoader fxmlCadastroUsuario = new FXMLLoader(HelloApplication.class.getResource("cadastrousuario-view.fxml"));
         CadUsuarioScene = new Scene(fxmlCadastroUsuario.load(),600,400);
@@ -62,7 +63,8 @@ public class HelloApplication extends Application {
     }
 
     public static ArrayList<Usuario> Loginsusuario = new ArrayList<>();
-
+    public static ArrayList<Usuario> Armazen = new ArrayList<>();
+    public static ArrayList<ListaID> ListaID = new ArrayList<>();
     public static void main(String[] args) {
         launch();
     }

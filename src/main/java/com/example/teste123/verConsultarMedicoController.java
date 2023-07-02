@@ -56,7 +56,7 @@ public class verConsultarMedicoController {
             HelloApplication.Loginsusuario.add(user);
             Stage stage = (Stage) VoltarMenu.getScene().getWindow();
             stage.close();
-            Parent root = FXMLLoader.load(getClass().getResource("menu-view.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("menumedico-view.fxml"));
             Stage MenuStage = new Stage();
             MenuStage.initStyle(StageStyle.UNDECORATED);
             MenuStage.setScene(new Scene(root, 640, 360));
@@ -71,10 +71,9 @@ public class verConsultarMedicoController {
     public void initialize() {
         DataBaseConexao conectarAgora2 = new DataBaseConexao();
         Connection connectDB2 = conectarAgora2.getConnection();
-
-        String mostrarDados = "SELECT Nome from new_medico WHERE Usuario='" +
-                HelloApplication.Loginsusuario.get(HelloApplication.Loginsusuario.size() - 1).getUsuario() + "'";
         setUserMed(HelloApplication.Loginsusuario.get(HelloApplication.Loginsusuario.size() - 1).getUsuario());
+        String mostrarDados = "SELECT Nome from new_medico WHERE Usuario='" + getUserMed() + "'";
+
         try {
             Statement statementDados = connectDB2.createStatement();
             ResultSet resultadoDados = statementDados.executeQuery(mostrarDados);
@@ -82,28 +81,27 @@ public class verConsultarMedicoController {
                 setNomeMed(resultadoDados.getString("Nome"));
             }
             String mostrarMedico = "SELECT idnew_table, UsuarioPaciente, NomeUsuario, Data from new_agendamento WHERE " +
-                    "UsuarioMedico ='" + getUserMed() + "'";
+                    "UsuarioMedico ='" + getUserMed() + "' and Encerrou='false'";
             try {
                 Statement statementMedicos = connectDB2.createStatement();
                 ResultSet resultadoMedicos = statementMedicos.executeQuery(mostrarMedico);
                 while (resultadoMedicos.next()) {
                     int ID = resultadoMedicos.getInt("idnew_table");
-                    String Usuario = resultadoMedicos.getString("UsuarioMedico");
-                    String Nome = resultadoMedicos.getString("NomeMedico");
+                    String Usuario = resultadoMedicos.getString("UsuarioPaciente");
+                    String Nome = resultadoMedicos.getString("NomeUsuario");
                     String Data = resultadoMedicos.getString("Data");
-
                     mostrandoConsultasObservableList.add(new ConsultaMedicoModelo(ID, Usuario, Nome, Data));
                 }
                 //
-                ID.setCellValueFactory(new PropertyValueFactory<>("ID"));
                 UsuarioTabela.setCellValueFactory(new PropertyValueFactory<>("Usuario"));
                 NomeTabela.setCellValueFactory(new PropertyValueFactory<>("Nome"));
                 DataTabela.setCellValueFactory(new PropertyValueFactory<>("Data"));
+                ID.setCellValueFactory(new PropertyValueFactory<>("ID"));
 
                 //
-
                 carregarAcao();
                 carregarAcao2();
+                ConsultasTableView.setItems(mostrandoConsultasObservableList);
 
                 FilteredList<ConsultaMedicoModelo> filteredData = new FilteredList<>(mostrandoConsultasObservableList, b -> true);
 
@@ -132,7 +130,9 @@ public class verConsultarMedicoController {
                 ConsultasTableView.setItems(sortedData);
                 //
             } catch (SQLException e) {
-                Logger.getLogger(VerConsultaModelo.class.getName()).log(Level.SEVERE, null, e);
+                Logger.getLogger(verConsultarMedicoController.class.getName()).log(Level.SEVERE, null, e);
+                e.printStackTrace();
+            } catch(java.lang.IllegalStateException e){
                 e.printStackTrace();
             }
         } catch (Exception e) {
@@ -147,7 +147,6 @@ public class verConsultarMedicoController {
             DataBaseConexao conectarAgora2 = new DataBaseConexao();
             Connection connectDB2 = conectarAgora2.getConnection();
             mostrandoConsultasObservableList.clear();
-
             query = "SELECT idnew_table, UsuarioMedico, NomeMedico, Especialidade, Data from new_agendamento WHERE " +
                     "UsuarioPaciente ='" + getUserMed() + "'";
             preparedStatement = connectDB2.prepareStatement(query);
@@ -162,7 +161,7 @@ public class verConsultarMedicoController {
                 ConsultasTableView.setItems(mostrandoConsultasObservableList);
             }
         } catch (SQLException ex) {
-            Logger.getLogger(VendoConsultasController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(verConsultarMedicoController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -197,6 +196,8 @@ public class verConsultarMedicoController {
                             try {
                                 Usuario user = new Usuario(getUserMed());
                                 HelloApplication.Loginsusuario.add(user);
+                                ListaID user2 = new ListaID(UsuarioMed.getId());
+                                HelloApplication.ListaID.add(user2);
                                 Stage stage = (Stage) irConsulta.getScene().getWindow();
                                 stage.close();
                                 Parent root = FXMLLoader.load(getClass().getResource("ConsultaMed-view.fxml"));
@@ -254,7 +255,7 @@ public class verConsultarMedicoController {
                                 preparedStatement.execute();
                                 resetaTabela();
                             } catch (SQLException e){
-                                Logger.getLogger(VendoConsultasController.class.getName()).log(Level.SEVERE, null, e);
+                                Logger.getLogger(verConsultarMedicoController.class.getName()).log(Level.SEVERE, null, e);
                             }
                         });
                         setText(null);
@@ -264,7 +265,6 @@ public class verConsultarMedicoController {
             return cell;
         };
         CancelarTabela.setCellFactory(cellFoctory);
-        ConsultasTableView.setItems(mostrandoConsultasObservableList);
     }
 
     public String getNomeMed() {

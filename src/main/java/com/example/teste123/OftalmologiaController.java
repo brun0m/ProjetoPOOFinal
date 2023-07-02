@@ -2,30 +2,25 @@ package com.example.teste123;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.collections.transformation.FilteredList;
-import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.ComboBoxListCell;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import javafx.util.Callback;
-import javafx.scene.control.Alert.AlertType;
-import java.sql.*;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.*;
 
-public class ClinicaGeralController {
+public class OftalmologiaController {
     private double Preco;
     private int cont;
     private String data;
@@ -50,7 +45,7 @@ public class ClinicaGeralController {
 
 
     ObservableList<String> escolherMedicoObservableList = FXCollections.observableArrayList();
-    public ClinicaGeralController(){}
+    public OftalmologiaController(){}
 
     @FXML
     public void ConfirmarAgendamentoOnAction(ActionEvent event){
@@ -108,7 +103,7 @@ public class ClinicaGeralController {
                 UsuarioPlano.setText(resultadoDados.getString("Plano"));
             }
             if(UsuarioPlano.getText().equals("SEMPLANO")){
-                setPreco(70);
+                setPreco(110);
             } else {setPreco(0);}
             String mostrandoMedicos = "SELECT Nome, Usuario from new_medico WHERE " +
                     UsuarioPlano.getText() + "='true' and Especialidade='CLINICA GERAL'";
@@ -132,7 +127,7 @@ public class ClinicaGeralController {
                     }
                 });
 
-                }catch (SQLException e){
+            }catch (SQLException e){
                 Logger.getLogger(escolherMedicoModelo.class.getName()).log(Level.SEVERE, null, e);
                 e.printStackTrace();
             }
@@ -170,7 +165,7 @@ public class ClinicaGeralController {
                     cont++;
                 }
                 if(cont >= 4){
-                    var alert = new Alert(AlertType.CONFIRMATION);
+                    var alert = new Alert(Alert.AlertType.CONFIRMATION);
                     alert.setTitle("Aviso");
                     alert.setHeaderText("Agenda do médico pro dia está cheio");
                     alert.setContentText("Você deseja entrar na lista de espera?");

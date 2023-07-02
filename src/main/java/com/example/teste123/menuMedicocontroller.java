@@ -16,7 +16,7 @@ import java.sql.Statement;
 
 public class menuMedicocontroller {
     @FXML
-    private Button BotaoSairConta;
+    private Button BotaoSairConta, BotaoHistorico;
     @FXML
     private Button BotaoAlteracao;
     @FXML
@@ -44,6 +44,24 @@ public class menuMedicocontroller {
     }
 
     @FXML
+    public void BotaoEntrarHistoricosOnAction(ActionEvent event) {
+        try {
+            Usuario user = new Usuario(UsuarioMenu.getText());
+            HelloApplication.Loginsusuario.add(user);
+            Stage stage = (Stage) BotaoHistorico.getScene().getWindow();
+            stage.close();
+            Parent root = FXMLLoader.load(getClass().getResource("historicomedico=view.fxml"));
+            Stage AlterarStage = new Stage();
+            AlterarStage.initStyle(StageStyle.UNDECORATED);
+            AlterarStage.setScene(new Scene(root, 800, 400));
+            AlterarStage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
+    }
+
+    @FXML
     public void BotaoEntrarConsultasOnAction(ActionEvent event) {
         try {
             Usuario user = new Usuario(UsuarioMenu.getText());
@@ -53,7 +71,7 @@ public class menuMedicocontroller {
             Parent root = FXMLLoader.load(getClass().getResource("verConsultaMedico-view.fxml"));
             Stage AlterarStage = new Stage();
             AlterarStage.initStyle(StageStyle.UNDECORATED);
-            AlterarStage.setScene(new Scene(root, 600, 400));
+            AlterarStage.setScene(new Scene(root, 800, 600));
             AlterarStage.show();
         } catch (Exception e) {
             e.printStackTrace();

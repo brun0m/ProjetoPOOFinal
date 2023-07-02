@@ -39,6 +39,127 @@ public class AgendamentoController{
             e.getCause();
         }
     }
+    @FXML
+    public void BotaoEntrarUrologiaOnAction(ActionEvent event) {
+        try {
+            Usuario user = new Usuario(UsuarioAgendamento.getText());
+            HelloApplication.Loginsusuario.add(user);
+            Stage stage = (Stage) ClinicaGeral.getScene().getWindow();
+            stage.close();
+            Parent root = FXMLLoader.load(getClass().getResource("urologia-view.fxml"));
+            Stage AgendarStage = new Stage();
+            AgendarStage.initStyle(StageStyle.UNDECORATED);
+            AgendarStage.setScene(new Scene(root, 640, 480));
+            AgendarStage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
+    }
+    @FXML
+    public void BotaoEntrarDermatologiaOnAction(ActionEvent event) {
+        try {
+            Usuario user = new Usuario(UsuarioAgendamento.getText());
+            HelloApplication.Loginsusuario.add(user);
+            Stage stage = (Stage) ClinicaGeral.getScene().getWindow();
+            stage.close();
+            Parent root = FXMLLoader.load(getClass().getResource("dermatologia-view.fxml"));
+            Stage AgendarStage = new Stage();
+            AgendarStage.initStyle(StageStyle.UNDECORATED);
+            AgendarStage.setScene(new Scene(root, 640, 480));
+            AgendarStage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
+    }
+
+    @FXML
+    public void BotaoEntrarOrtopediaOnAction(ActionEvent event) {
+        try {
+            Usuario user = new Usuario(UsuarioAgendamento.getText());
+            HelloApplication.Loginsusuario.add(user);
+            Stage stage = (Stage) ClinicaGeral.getScene().getWindow();
+            stage.close();
+            Parent root = FXMLLoader.load(getClass().getResource("ortopedia-view.fxml"));
+            Stage AgendarStage = new Stage();
+            AgendarStage.initStyle(StageStyle.UNDECORATED);
+            AgendarStage.setScene(new Scene(root, 640, 480));
+            AgendarStage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
+    }
+
+    @FXML
+    public void BotaoEntrarOftalmologiaOnAction(ActionEvent event) {
+        try {
+            Usuario user = new Usuario(UsuarioAgendamento.getText());
+            HelloApplication.Loginsusuario.add(user);
+            Stage stage = (Stage) ClinicaGeral.getScene().getWindow();
+            stage.close();
+            Parent root = FXMLLoader.load(getClass().getResource("oftalmologia-view.fxml"));
+            Stage AgendarStage = new Stage();
+            AgendarStage.initStyle(StageStyle.UNDECORATED);
+            AgendarStage.setScene(new Scene(root, 640, 480));
+            AgendarStage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
+    }
+    @FXML
+    public void BotaoEntrarNeurologiaOnAction(ActionEvent event) {
+        try {
+            Usuario user = new Usuario(UsuarioAgendamento.getText());
+            HelloApplication.Loginsusuario.add(user);
+            Stage stage = (Stage) ClinicaGeral.getScene().getWindow();
+            stage.close();
+            Parent root = FXMLLoader.load(getClass().getResource("neurologia-view.fxml"));
+            Stage AgendarStage = new Stage();
+            AgendarStage.initStyle(StageStyle.UNDECORATED);
+            AgendarStage.setScene(new Scene(root, 640, 480));
+            AgendarStage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
+    }
+    @FXML
+    public void BotaoEntrarCardiologiaOnAction(ActionEvent event) {
+        try {
+            Usuario user = new Usuario(UsuarioAgendamento.getText());
+            HelloApplication.Loginsusuario.add(user);
+            Stage stage = (Stage) ClinicaGeral.getScene().getWindow();
+            stage.close();
+            Parent root = FXMLLoader.load(getClass().getResource("cardiologia-view.fxml"));
+            Stage AgendarStage = new Stage();
+            AgendarStage.initStyle(StageStyle.UNDECORATED);
+            AgendarStage.setScene(new Scene(root, 640, 480));
+            AgendarStage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
+    }
+    @FXML
+    public void BotaoEntrarGinecologiaOnAction(ActionEvent event) {
+        try {
+            Usuario user = new Usuario(UsuarioAgendamento.getText());
+            HelloApplication.Loginsusuario.add(user);
+            Stage stage = (Stage) ClinicaGeral.getScene().getWindow();
+            stage.close();
+            Parent root = FXMLLoader.load(getClass().getResource("ginecologia-view.fxml"));
+            Stage AgendarStage = new Stage();
+            AgendarStage.initStyle(StageStyle.UNDECORATED);
+            AgendarStage.setScene(new Scene(root, 640, 480));
+            AgendarStage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
+    }
 
     @FXML
     public void BotaoEntrarClinicaGeralOnAction(ActionEvent event) {

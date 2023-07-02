@@ -45,7 +45,7 @@
             <Button fx:id="ButtonEntrarConsultas" layoutX="47.0" layoutY="135.0" mnemonicParsing="false" onAction="#BotaoEntrarConsultasOnAction" prefHeight="18.0" prefWidth="197.0" text="Ver Consultas" />
             <Button fx:id="BotaoAlteracao" layoutX="47.0" layoutY="173.0" mnemonicParsing="false" onAction="#BotaoEntrarAlterarDadosOnAction" prefHeight="18.0" prefWidth="197.0" text="Alterar Dados" />
             <Button fx:id="BotaoSairConta" layoutX="47.0" layoutY="212.0" mnemonicParsing="false" onAction="#BotaoSairContaOnAction" prefHeight="18.0" prefWidth="197.0" text="Sair" />
-            <Button layoutX="47.0" layoutY="96.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="197.0" text="Histórico" />
+            <Button fx:id="BotaoHistorico" layoutX="47.0" layoutY="96.0" mnemonicParsing="false" onAction="#BotaoEntrarHistoricosOnAction" prefHeight="18.0" prefWidth="197.0" text="Histórico" />
          </children>
       </AnchorPane>
    </right>

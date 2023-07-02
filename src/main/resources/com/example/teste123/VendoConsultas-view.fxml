@@ -7,7 +7,6 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.teste123.VendoConsultasController">
    <children>
       <TableView fx:id="ConsultasTableView" layoutY="81.0" prefHeight="506.0" prefWidth="808.0">
@@ -24,11 +23,12 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <TextField fx:id="Pesquisando" layoutX="48.0" layoutY="37.0" prefHeight="25.0" prefWidth="618.0" promptText="Pesquisar" />
+      <TextField fx:id="Pesquisando" layoutX="35.0" layoutY="37.0" prefHeight="25.0" prefWidth="618.0" promptText="Pesquisar" />
       <Label alignment="CENTER" layoutX="48.0" layoutY="6.0" prefHeight="17.0" prefWidth="52.0" text="Usuário:" />
       <Label fx:id="UsuarioMenu" layoutX="100.0" layoutY="6.0" prefHeight="17.0" prefWidth="79.0" />
       <Label alignment="CENTER" layoutX="179.0" layoutY="6.0" prefHeight="17.0" prefWidth="52.0" text="Plano:" />
       <Label fx:id="UsuarioPlano" layoutX="231.0" layoutY="6.0" prefHeight="17.0" prefWidth="79.0" />
       <Button fx:id="VoltarMenu" layoutX="678.0" layoutY="37.0" mnemonicParsing="false" onAction="#BotaoVoltarMenuOnAction" prefHeight="25.0" prefWidth="123.0" text="Voltar" />
+      <Label fx:id="Aviso" alignment="CENTER" layoutX="243.0" layoutY="62.0" prefHeight="17.0" prefWidth="275.0" textFill="RED" />
    </children>
 </AnchorPane>

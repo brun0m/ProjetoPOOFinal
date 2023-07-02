@@ -1,18 +1,19 @@
 package com.example.teste123;
 
 public class VerConsultaModelo {
-    public int ID;
+    public int ID, posicao;
     public String usuario;
     public String nome;
     public String especialidade;
     public String data;
 
-    public VerConsultaModelo(int ID, String usuario, String nome, String especialidade, String data){
+    public VerConsultaModelo(int ID, String usuario, String nome, String especialidade, String data, int posicao){
         this.ID = ID;
         this.usuario = usuario;
         this.nome = nome;
         this.especialidade = especialidade;
         this.data = data;
+        this.posicao = posicao;
     }
 
     public int getID() {
@@ -53,5 +54,13 @@ public class VerConsultaModelo {
 
     public void setData(String data) {
         this.data = data;
+    }
+
+    public int getPosicao() {
+        return posicao;
+    }
+
+    public void setPosicao(int posicao) {
+        this.posicao = posicao;
     }
 }
