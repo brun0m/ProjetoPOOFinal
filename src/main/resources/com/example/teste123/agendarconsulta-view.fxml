@@ -44,7 +44,7 @@
                   <Font name="System Bold Italic" size="18.0" />
                </font>
             </Text>
-            <Button layoutX="259.0" layoutY="177.0" mnemonicParsing="false" onAction="#BotaoEntrarGinecologiaOnAction" prefHeight="25.0" prefWidth="101.0" text="Agendar" />
+            <Button layoutX="259.0" layoutY="177.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="101.0" text="Agendar" />
             <Label layoutX="422.0" layoutY="42.0" prefHeight="179.0" prefWidth="159.0" style="-fx-background-color: FFFFFF;">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
@@ -55,7 +55,7 @@
                   <Font name="System Bold Italic" size="18.0" />
                </font>
             </Text>
-            <Button layoutX="451.0" layoutY="177.0" mnemonicParsing="false" onAction="#BotaoEntrarOrtopediaOnAction" prefHeight="25.0" prefWidth="101.0" text="Agendar" />
+            <Button layoutX="451.0" layoutY="177.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="101.0" text="Agendar" />
             <Label layoutX="603.0" layoutY="40.0" prefHeight="179.0" prefWidth="159.0" style="-fx-background-color: FFFFFF;">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
@@ -66,7 +66,7 @@
                   <Font name="System Bold Italic" size="18.0" />
                </font>
             </Text>
-            <Button layoutX="632.0" layoutY="177.0" mnemonicParsing="false" onAction="#BotaoEntrarDermatologiaOnAction" prefHeight="25.0" prefWidth="101.0" text="Agendar" />
+            <Button layoutX="632.0" layoutY="177.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="101.0" text="Agendar" />
             <Label layoutX="41.0" layoutY="236.0" prefHeight="175.0" prefWidth="159.0" style="-fx-background-color: FFFFFF;">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
@@ -77,7 +77,7 @@
                   <Font name="System Bold Italic" size="18.0" />
                </font>
             </Text>
-            <Button layoutX="70.0" layoutY="368.0" mnemonicParsing="false" onAction="#BotaoEntrarUrologiaOnAction" prefHeight="25.0" prefWidth="101.0" text="Agendar" />
+            <Button layoutX="70.0" layoutY="368.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="101.0" text="Agendar" />
             <Label layoutX="230.0" layoutY="236.0" prefHeight="175.0" prefWidth="159.0" style="-fx-background-color: FFFFFF;">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
@@ -88,7 +88,7 @@
                   <Font name="System Bold Italic" size="18.0" />
                </font>
             </Text>
-            <Button layoutX="259.0" layoutY="369.0" mnemonicParsing="false" onAction="#BotaoEntrarOftalmologiaOnAction" prefHeight="25.0" prefWidth="101.0" text="Agendar" />
+            <Button layoutX="259.0" layoutY="369.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="101.0" text="Agendar" />
             <Label layoutX="422.0" layoutY="236.0" prefHeight="175.0" prefWidth="159.0" style="-fx-background-color: FFFFFF;">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
@@ -99,7 +99,7 @@
                   <Font name="System Bold Italic" size="18.0" />
                </font>
             </Text>
-            <Button layoutX="451.0" layoutY="368.0" mnemonicParsing="false" onAction="#BotaoEntrarNeurologiaOnAction" prefHeight="25.0" prefWidth="101.0" text="Agendar" />
+            <Button layoutX="451.0" layoutY="368.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="101.0" text="Agendar" />
             <Label layoutX="603.0" layoutY="236.0" prefHeight="175.0" prefWidth="159.0" style="-fx-background-color: FFFFFF;">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
@@ -110,7 +110,7 @@
                   <Font name="System Bold Italic" size="18.0" />
                </font>
             </Text>
-            <Button layoutX="630.0" layoutY="368.0" mnemonicParsing="false" onAction="#BotaoEntrarCardiologiaOnAction" prefHeight="25.0" prefWidth="101.0" text="Agendar" />
+            <Button layoutX="630.0" layoutY="368.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="101.0" text="Agendar" />
             <Label layoutX="667.0" layoutY="6.0" />
             <Label fx:id="UsuarioAgendamento" alignment="CENTER" layoutX="645.0" layoutY="15.0" prefHeight="17.0" prefWidth="108.0" />
             <Text layoutX="576.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuário:" textAlignment="RIGHT" wrappingWidth="65.236328125" />

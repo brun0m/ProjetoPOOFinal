@@ -6,6 +6,8 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.shape.Line?>
@@ -13,13 +15,18 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.teste123.alterarDadosMedController">
    <top>
-      <AnchorPane prefHeight="78.0" prefWidth="600.0" style="-fx-background-color: #000000;" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="67.0" prefWidth="600.0" style="-fx-background-color: #000000;" BorderPane.alignment="CENTER">
          <children>
             <Label layoutX="98.0" layoutY="26.0" prefHeight="17.0" prefWidth="208.0" text="ALTERAR DADOS" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
+            <ImageView fx:id="Cadeado" fitHeight="45.0" fitWidth="47.0" layoutX="41.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../../OneDrive/Pictures/cadeado.jpg" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </top>

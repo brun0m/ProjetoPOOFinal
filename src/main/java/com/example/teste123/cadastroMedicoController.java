@@ -10,7 +10,10 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.RadioButton;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
+import java.io.File;
 import java.sql.Connection;
 import java.sql.Statement;
 import java.util.ResourceBundle;
@@ -44,17 +47,31 @@ public class cadastroMedicoController implements Initializable {
 
     @FXML
     public void BotaoEntrarInicioOnAction(ActionEvent event){
+        mensagemRegistrar.setText("");
         HelloApplication.mudarTela(0);
     }
 
     @FXML
     public void BotaoCadastrarMedicoOnAction(ActionEvent event){
-        if(Senha1.getText().equals(Senha2.getText())){
-            registrarMedico();
-            AvisoSenha.setText("");
+        if (nome.getText().isBlank() == true || usuario.getText().isBlank() == true){
+            mensagemRegistrar.setText("Digite seu nome e usuário!");
+        } else if(EspecialidadeEscolhida.getText().isBlank() == true){
+            mensagemRegistrar.setText("Escolha sua especialidade!");
+        }
+        else if(Senha1.getText().isBlank() == true){
+            AvisoSenha.setText("Digite uma senha!");
+        }
+        else if(Senha1.getText().equals(Senha2.getText()) == false){
+            AvisoSenha.setText("Senhas não estão iguais!");
         }
         else{
-            AvisoSenha.setText("Senhas não estão iguais!");
+            registrarMedico();
+            AvisoSenha.setText("");
+            Senha1.setText("");
+            Senha2.setText("");
+            nome.setText("");
+            usuario.setText("");
+            EspecialidadeEscolhida.setText("");
         }
     }
 
@@ -80,7 +97,7 @@ public class cadastroMedicoController implements Initializable {
         try{
             Statement statement = connectionDB.createStatement();
             statement.executeUpdate(InsertToRegister);
-            mensagemRegistrar.setText("Usuário registrado com sucesso!");
+            mensagemRegistrar.setText("Médico registrado com sucesso!");
         }catch(Exception e){
             e.printStackTrace();
             e.getCause();
@@ -93,12 +110,17 @@ public class cadastroMedicoController implements Initializable {
         String esp = CBEspecialidades.getSelectionModel().getSelectedItem().toString();
         EspecialidadeEscolhida.setText(esp);
     }
+    @FXML
+    private ImageView FotoCadeado;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
         ObservableList<String> ListaDeEspecialidades = FXCollections.observableArrayList("CLINICA GERAL",
                 "GINECOLOGIA", "ORTOPEDIA", "DERMATOLOGIA","UROLOGIA", "OFTALMOLOGIA", "NEUROLOGIA", "CARDIOLOGIA");
         CBEspecialidades.setItems(ListaDeEspecialidades);
+        File medicoFile = new File("C:/Users/silve/OneDrive/Pictures/cadeado.jpg");
+        Image medicoImagem = new Image(medicoFile.toURI().toString());
+        FotoCadeado.setImage(medicoImagem);
 
     }
 

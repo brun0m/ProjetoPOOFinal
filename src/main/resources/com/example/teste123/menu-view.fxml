@@ -29,7 +29,7 @@
             <Label alignment="CENTER" layoutX="21.0" layoutY="124.0" prefHeight="17.0" prefWidth="71.0" text="PLANO:" />
             <Label alignment="CENTER" layoutX="21.0" layoutY="100.0" prefHeight="17.0" prefWidth="71.0" text="NOME:" />
             <Label alignment="CENTER" layoutX="21.0" layoutY="77.0" prefHeight="17.0" prefWidth="71.0" text="USUÁRIO:" />
-            <ImageView fitHeight="68.0" fitWidth="70.0" layoutX="32.0" layoutY="226.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="FotoUECE" fitHeight="68.0" fitWidth="70.0" layoutX="32.0" layoutY="226.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../../../../OneDrive/Pictures/uece.png" />
                </image>
@@ -38,6 +38,11 @@
             <Label fx:id="NomeMenu" layoutX="98.0" layoutY="100.0" prefHeight="17.0" prefWidth="147.0" />
             <Label fx:id="PlanoMenu" layoutX="98.0" layoutY="124.0" prefHeight="17.0" prefWidth="147.0" />
             <Label layoutX="116.0" layoutY="27.0" text="Login como Paciente" textFill="#00f6ff" />
+            <ImageView fx:id="FotoUsuario" fitHeight="65.0" fitWidth="88.0" layoutX="24.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../../OneDrive/Pictures/FotoUsuario.jpg" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </left>

@@ -2,6 +2,8 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.shape.Line?>
@@ -34,7 +36,12 @@
             <Label fx:id="EstrelasMenu" layoutX="129.0" layoutY="113.0" prefHeight="17.0" prefWidth="150.0" />
             <Label fx:id="AtendimentosMenu" layoutX="129.0" layoutY="139.0" prefHeight="17.0" prefWidth="150.0" />
             <Label fx:id="EspecialidadeMenu" layoutX="129.0" layoutY="169.0" prefHeight="17.0" prefWidth="150.0" />
-            <Label fx:id="PlanosMenu" layoutX="129.0" layoutY="199.0" prefHeight="33.0" prefWidth="182.0" />
+            <Label fx:id="PlanosMenu" layoutX="107.0" layoutY="191.0" prefHeight="33.0" prefWidth="182.0" />
+            <ImageView fx:id="FotoUECE" fitHeight="64.0" fitWidth="65.0" layoutX="48.0" layoutY="224.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../../OneDrive/Pictures/uece.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </left>
@@ -46,6 +53,11 @@
             <Button fx:id="BotaoAlteracao" layoutX="47.0" layoutY="173.0" mnemonicParsing="false" onAction="#BotaoEntrarAlterarDadosOnAction" prefHeight="18.0" prefWidth="197.0" text="Alterar Dados" />
             <Button fx:id="BotaoSairConta" layoutX="47.0" layoutY="212.0" mnemonicParsing="false" onAction="#BotaoSairContaOnAction" prefHeight="18.0" prefWidth="197.0" text="Sair" />
             <Button fx:id="BotaoHistorico" layoutX="47.0" layoutY="96.0" mnemonicParsing="false" onAction="#BotaoEntrarHistoricosOnAction" prefHeight="18.0" prefWidth="197.0" text="Histórico" />
+            <ImageView fx:id="FotoMedico" fitHeight="91.0" fitWidth="56.0" layoutX="117.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../../OneDrive/Pictures/fotomedico.jpg" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </right>

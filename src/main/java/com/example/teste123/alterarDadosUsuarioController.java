@@ -9,9 +9,12 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import java.io.File;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -58,12 +61,20 @@ public class alterarDadosUsuarioController{
 
     @FXML
     public void BotaoAlterarOnAction(ActionEvent event){
-        if(Senha1.getText().equals(Senha2.getText())){
-            alterarUsuario();
-            AvisoSenha.setText("");
+        if (nome.getText().isBlank() == true){
+            confirmarRegistro.setText("Digite seu nome");
+        } else if(PlanoEscolhido.getText().isBlank() == true){
+            confirmarRegistro.setText("Escolha seu plano!");
+        }
+        else if(Senha1.getText().isBlank() == true){
+            AvisoSenha.setText("Digite uma senha!");
+        }
+        else if(Senha1.getText().equals(Senha2.getText()) == false){
+            AvisoSenha.setText("Senhas não estão iguais!");
         }
         else{
-            AvisoSenha.setText("Senhas não estão iguais!");
+            alterarUsuario();
+            AvisoSenha.setText("");
         }
     }
 
@@ -90,9 +101,15 @@ public class alterarDadosUsuarioController{
     }
 
     @FXML
+    private ImageView Cadeado;
+
+    @FXML
     public void initialize(){
         DataBaseConexao conectarAgora2 = new DataBaseConexao();
         Connection connectDB2 = conectarAgora2.getConnection();
+        File medicoFile = new File("C:/Users/silve/OneDrive/Pictures/cadeado.jpg");
+        Image medicoImagem = new Image(medicoFile.toURI().toString());
+        Cadeado.setImage(medicoImagem);
 
         String mostrarDados = "SELECT Nome, Usuario, Plano, Senha from new_table WHERE Usuario='" +
                 HelloApplication.Loginsusuario.get(HelloApplication.Loginsusuario.size()-1).getUsuario() + "'";

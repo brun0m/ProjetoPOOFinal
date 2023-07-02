@@ -7,9 +7,12 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import java.io.File;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -98,9 +101,20 @@ public class menuMedicocontroller {
     }
 
     @FXML
+    private ImageView FotoUECE;
+    @FXML
+    private ImageView FotoMedico;
+
+    @FXML
     public void initialize(){
         DataBaseConexao conectarAgora2 = new DataBaseConexao();
         Connection connectDB2 = conectarAgora2.getConnection();
+        File usuarioFile = new File("C:/Users/silve/OneDrive/Pictures/uece.png");
+        Image usuarioImagem = new Image(usuarioFile.toURI().toString());
+        FotoUECE.setImage(usuarioImagem);
+        File usuarioFile2 = new File("C:/Users/silve/OneDrive/Pictures/fotomedico.jpg");
+        Image usuarioImagem2 = new Image(usuarioFile2.toURI().toString());
+        FotoMedico.setImage(usuarioImagem2);
 
         String mostrarDados = "SELECT Nome, Usuario, Avaliacao, AMIL, BRADESCO, CAMED, UNIMED," +
                 " NumDeAvaliacao, Especialidade from new_medico WHERE Usuario='" +

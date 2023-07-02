@@ -8,10 +8,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import java.io.File;
 import java.sql.Connection;
 import java.net.URL;
 import java.sql.ResultSet;
@@ -135,11 +138,21 @@ public class menuUsuariocontroller {
         HelloApplication.mudarTela(1);
     }
 
+    @FXML
+    private ImageView FotoUECE;
+    @FXML
+    private ImageView FotoUsuario;
 
     @FXML
     public void initialize(){
         DataBaseConexao conectarAgora2 = new DataBaseConexao();
         Connection connectDB2 = conectarAgora2.getConnection();
+        File usuarioFile = new File("C:/Users/silve/OneDrive/Pictures/uece.png");
+        Image usuarioImagem = new Image(usuarioFile.toURI().toString());
+        FotoUECE.setImage(usuarioImagem);
+        File usuarioFile2 = new File("C:/Users/silve/OneDrive/Pictures/FotoUsuario.jpg");
+        Image usuarioImagem2 = new Image(usuarioFile2.toURI().toString());
+        FotoUsuario.setImage(usuarioImagem2);
 
         String mostrarDados = "SELECT Nome, Usuario, Plano from new_table WHERE Usuario='" +
                 HelloApplication.Loginsusuario.get(HelloApplication.Loginsusuario.size()-1).getUsuario() + "'";

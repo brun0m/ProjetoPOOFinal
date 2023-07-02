@@ -10,8 +10,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.ComboBox;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import org.w3c.dom.Text;
 
+import java.io.File;
 import java.net.URL;
 import java.sql.Statement;
 import java.sql.Connection;
@@ -38,19 +41,38 @@ public class cadastroUsuarioController implements Initializable {
 
     @FXML
     public void BotaoEntrarInicioOnAction(ActionEvent event){
+        mensagemRegistrar.setText("");
+        usuario.setText("");
+        nome.setText("");
+        PlanoEscolhido.setText("");
+        AvisoSenha.setText("");
+        Senha1.setText("");
+        Senha2.setText("");
         HelloApplication.mudarTela(0);
     }
 
     @FXML
     public void BotaoCadastrarUsuarioOnAction(ActionEvent event){
-        if(Senha1.getText().equals(Senha2.getText())){
+        if (nome.getText().isBlank() == true || usuario.getText().isBlank() == true){
+            mensagemRegistrar.setText("Digite seu nome e usuário!");
+        } else if(PlanoEscolhido.getText().isBlank() == true){
+            mensagemRegistrar.setText("Escolha seu plano!");
+        } else if(Senha1.getText().isBlank() == true){
+            AvisoSenha.setText("Digite uma senha!");
+        } else if(Senha1.getText().equals(Senha2.getText()) == false){
+            AvisoSenha.setText("Senhas não estão iguais!");
             registrarUsuario();
             AvisoSenha.setText("");
+        } else{
+            registrarUsuario();
+            AvisoSenha.setText("");
+            AvisoSenha.setText("");
+            Senha1.setText("");
+            Senha2.setText("");
+            nome.setText("");
+            usuario.setText("");
+            PlanoEscolhido.setText("");
         }
-        else{
-            AvisoSenha.setText("Senhas não estão iguais!");
-        }
-
     }
 
     public void registrarUsuario(){
@@ -81,10 +103,15 @@ public class cadastroUsuarioController implements Initializable {
         PlanoEscolhido.setText(plano);
     }
 
+    @FXML
+    private ImageView FotoCadeado;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ObservableList<String> ListaDePlanos = FXCollections.observableArrayList("CAMED", "BRADESCO", "UNIMED",
                 "AMIL","SEMPLANO");
         CBPlanos.setItems(ListaDePlanos);
+        File medicoFile = new File("C:/Users/silve/OneDrive/Pictures/cadeado.jpg");
+        Image medicoImagem = new Image(medicoFile.toURI().toString());
+        FotoCadeado.setImage(medicoImagem);
     }
 }

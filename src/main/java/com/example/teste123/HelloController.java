@@ -12,9 +12,8 @@ import java.io.*;
 import java.util.ResourceBundle;
 import java.net.URL;
 
-public class HelloController implements Initializable {
+public class HelloController implements Initializable{
 
-    //CÓDIGO PARA APLICAR A AÇÃO DOS BOTOES
     @FXML
     private Button botaozincentral;
 
@@ -54,13 +53,13 @@ public class HelloController implements Initializable {
     private ImageView FotoUECE;
 
     @Override
-    public void initialize(URL url, ResourceBundle rB){
-    //    File medicoFile = new File("OneDrive/Pictures/uece.png");
-    //    Image medicoImagem = new Image(medicoFile.toURI().toString());
-    //    FotoUECE.setImage(medicoImagem);
-    //    File usuarioFile = new File("OneDrive/Pictures/Computacao.jpg");
-    //    Image usuarioImagem = new Image(usuarioFile.toURI().toString());
-    //    FotoComputacao.setImage(usuarioImagem);
+    public void initialize(URL url, ResourceBundle resourceBundle){
+        File medicoFile = new File("C:/Users/silve/OneDrive/Pictures/Computacao.jpg");
+        Image medicoImagem = new Image(medicoFile.toURI().toString());
+        FotoComputacao.setImage(medicoImagem);
+        File usuarioFile = new File("C:/Users/silve/OneDrive/Pictures/uece.png");
+        Image usuarioImagem = new Image(usuarioFile.toURI().toString());
+        FotoUECE.setImage(usuarioImagem);
     }
 
 
