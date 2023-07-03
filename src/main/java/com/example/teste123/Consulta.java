@@ -98,12 +98,12 @@ public class Consulta {
             Statement statementDados2 = connectDB2.createStatement();
             ResultSet resultadoDados2 = statementDados2.executeQuery(atualizandoMedico);
             while(resultadoDados2.next()) {
-                int num = resultadoDados2.getInt("NumDeAvaliacao");
+                num = resultadoDados2.getInt("NumDeAvaliacao");
                 UltimasAvaliacao = resultadoDados2.getString("UltimasAvaliacao");
                 Avaliacao1 = resultadoDados2.getDouble("Avaliacao");
             }
             if(Avaliacao.getText() != null) {
-                UltimasAvaliacao = UltimasAvaliacao + " /// " + Avaliacao;
+                UltimasAvaliacao = UltimasAvaliacao + " /// " + Avaliacao.getText();
             } if(getNota() != 0){
                 num++;
                 Avaliacao1 = (Avaliacao1 + getNota()) / num;

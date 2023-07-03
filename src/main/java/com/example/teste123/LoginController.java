@@ -54,7 +54,7 @@ public class LoginController implements Initializable{
         DataBaseConexao conectarAgora = new DataBaseConexao();
         Connection connectDB = conectarAgora.getConnection();
         String verificarLogin = "SELECT count(1) from new_table WHERE Usuario='" + NomeDoUsuario.getText() + "' and Senha = '" + Senha.getText() + "'";
-        String verificarLogin2 = "SELECT count(2) from new_medico WHERE Usuario='" + NomeDoUsuario.getText() + "' and Senha = '" + Senha.getText() + "'";
+        String verificarLogin2 = "SELECT count(1) from new_medico WHERE Usuario='" + NomeDoUsuario.getText() + "' and Senha = '" + Senha.getText() + "'";
         try {
             Statement statement = connectDB.createStatement();
             ResultSet queryResult = statement.executeQuery(verificarLogin);
@@ -66,7 +66,7 @@ public class LoginController implements Initializable{
                     Usuario user = new Usuario(NomeDoUsuario.getText());
                     HelloApplication.Loginsusuario.add(user);
                     entrarMenuUsuario();
-                } else if (queryResult2.getInt(1) == 2) {
+                } else if (queryResult2.getInt(1) == 1) {
                     Usuario user = new Usuario(NomeDoUsuario.getText());
                     HelloApplication.Loginsusuario.add(user);
                     entrarMenuMedico();
